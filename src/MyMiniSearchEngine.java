@@ -19,6 +19,8 @@ public class MyMiniSearchEngine {
     // assume documents only contain alphabetical words separated by white spaces.
     private void index(List<String> texts) {
         //homework
+    	// add comment
+    	
     }
 
     // search(key) return all the document ids where the given key phrase appears.
