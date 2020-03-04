@@ -20,6 +20,7 @@ public class MyMiniSearchEngine {
     private void index(List<String> texts) {
         //homework
     	// add comment
+    	// add more
     	
     }
 
