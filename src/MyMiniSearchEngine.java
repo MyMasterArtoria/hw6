@@ -57,7 +57,7 @@ public class MyMiniSearchEngine {
         	{docId.add(indexes.get(keyPhrase).get(i).get(j));
         	}
         }
-        System.out.println(docId.toString());
+       
         return docId; // place holder
     }
 }
