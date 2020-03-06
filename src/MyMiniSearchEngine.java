@@ -29,7 +29,7 @@ public class MyMiniSearchEngine {
     				list.add(inlist);
     				indexes.put(words[j], list);
     			}
-    			if(indexes.containsKey(words[j])){
+    			else if(indexes.containsKey(words[j])){
     				List<Integer> inlist= new ArrayList<>();
     				inlist.add(i);
     				List<List<Integer>> list = new ArrayList<List<Integer>>();
@@ -57,7 +57,7 @@ public class MyMiniSearchEngine {
         	{docId.add(indexes.get(keyPhrase).get(i).get(j));
         	}
         }
-        System.out.println(indexes.get(keyPhrase).get(i).size());
+        System.out.println(docId.toString());
         return docId; // place holder
     }
 }
