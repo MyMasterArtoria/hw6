@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 
 public class MyMiniSearchEngine {
     // default solution. OK to change.
     // do not change the signature of index()
-    private Map<String, List<List<Integer>>> indexes;
+    private Map<String, List<List<Integer>>> indexes = new HashMap<>();
 
     // disable default constructor
     private MyMiniSearchEngine() {
@@ -21,8 +22,7 @@ public class MyMiniSearchEngine {
         for(int i=0;i<texts.size();i++) {
     	String[] words=texts.get(i).split(" ");
     		for(int j=0;j<words.length;j++) {
-    			System.out.println(words[j]);
-    			/*if(!indexes.containsKey(words[j])){
+    			if(!indexes.containsKey(words[j])){
     				List<List<Integer>> list = new ArrayList<List<Integer>>();
     				List<Integer> inlist= new ArrayList<>();
     				inlist.add(i);
@@ -36,7 +36,7 @@ public class MyMiniSearchEngine {
     				list=indexes.get(words[j]);
     				list.add(inlist);
     				indexes.replace(words[j], list);
-    			}*/
+    			}
     		}
     	}
  }
@@ -57,6 +57,7 @@ public class MyMiniSearchEngine {
         	{docId.add(indexes.get(keyPhrase).get(i).get(j));
         	}
         }
+        System.out.println(docId.get(0)+docId.get(1));
         return docId; // place holder
     }
 }
