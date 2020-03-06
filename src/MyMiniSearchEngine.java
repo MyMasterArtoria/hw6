@@ -59,32 +59,63 @@ public class MyMiniSearchEngine {
         	docId.add(indexes.get(keyPhrase).get(i).get(0));}}
     		else{docId.add(-1);}
     	}
-//    	if(words.length==2)
-//    	{
-//    		if(indexes.containsKey(words[0])&&indexes.containsKey(words[1])){ 
-//    			for(int i=0;i<indexes.get(words[0]).size();i++){
-//    				for(int j=0;j<indexes.get(words[1]).size();j++) {
-//    					if(indexes.get(words[0]).get(i).get(0)==indexes.get(words[1]).get(j).get(0)) {
-//    							if(indexes.get(words[0]).get(i).get(0)+1==indexes.get(words[1]).get(j).get(1)) {
-//    								docId.add(indexes.get(words[0]).get(i).get(0));
-//    							}
-//    						}
-//    					}
-//    				}
-//    				}
-//    			}
-//    		else{docId.add(-1);}
-//    
-//    	if(words.length==3)
-//    	{
-//    		if(indexes.containsKey(words[0])&&indexes.containsKey(words[1])&&indexes.containsKey(words[2]))
-//    		{}
-//    		else{docId.add(-1);}
-//    	}
-    	if(words.length==4)
+    	else if(words.length==2)
+    	{
+    		if(indexes.containsKey(words[0])&&indexes.containsKey(words[1])){ 
+    			for(int i=0;i<indexes.get(words[0]).size();i++){
+    				for(int j=0;j<indexes.get(words[1]).size();j++) {
+    					if(indexes.get(words[0]).get(i).get(0)==indexes.get(words[1]).get(j).get(0)) {
+    							if(indexes.get(words[0]).get(i).get(1)+1==indexes.get(words[1]).get(j).get(1)) {
+    								docId.add(indexes.get(words[0]).get(i).get(0));
+    								
+    							}
+    						}
+    					}
+    				}
+    			}
+    		else{docId.add(-1);}
+    			
+    		
+    	}
+    	else if(words.length==3)
+    	{
+    		if(indexes.containsKey(words[0])&&indexes.containsKey(words[1])&&indexes.containsKey(words[2])) {
+    			
+        			for(int i=0;i<indexes.get(words[0]).size();i++){
+        				for(int j=0;j<indexes.get(words[1]).size();j++) {
+        						for (int k=0;k<indexes.get(words[2]).size();k++) {
+        							if(indexes.get(words[0]).get(i).get(0)==indexes.get(words[1]).get(j).get(0)) {
+        								if(indexes.get(words[0]).get(i).get(1)+1==indexes.get(words[1]).get(j).get(1)) {
+        									if(indexes.get(words[1]).get(j).get(1)+1==indexes.get(words[2]).get(k).get(1))
+        										{docId.add(indexes.get(words[0]).get(i).get(0));}
+        								}
+        							}
+        						}
+        					}
+        				}
+        			}
+        		else{docId.add(-1);}
+    	}
+    	else if(words.length==4)
     	{
     		if(indexes.containsKey(words[0])&&indexes.containsKey(words[1])&&indexes.containsKey(words[2])&&indexes.containsKey(words[3]))
-    		{}
+    			for(int i=0;i<indexes.get(words[0]).size();i++){
+    				for(int j=0;j<indexes.get(words[1]).size();j++) {
+    						for (int k=0;k<indexes.get(words[2]).size();k++) {
+    							for (int l=0;l<indexes.get(words[3]).size();l++) {
+    							if(indexes.get(words[0]).get(i).get(0)==indexes.get(words[1]).get(j).get(0)) {
+    								if(indexes.get(words[0]).get(i).get(1)+1==indexes.get(words[1]).get(j).get(1)) {
+    									if(indexes.get(words[1]).get(j).get(1)+1==indexes.get(words[2]).get(k).get(1))
+    									{
+    										if(indexes.get(words[2]).get(k).get(1)+1==indexes.get(words[3]).get(l).get(1))
+    										{docId.add(indexes.get(words[0]).get(i).get(0));}
+    									}
+    								}
+    							}
+    						}
+    					}
+    				}
+    			}
     		else{docId.add(-1);}
     	}
         return docId; // place holder
